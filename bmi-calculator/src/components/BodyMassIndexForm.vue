@@ -12,8 +12,8 @@ const weight = ref('')
 const height = ref('')
 
 function calculateClicked () {
-  // validate that both height and weight were entered
-  if (weight.value === '' || height.value === '') {
+  // validate that both height and weight were entered and not less than or equal to 0
+  if (weight.value === '' || height.value === '' || weight.value <= 0 || height.value <= 0) {
     alert('Enter a height and weight!')
   } else {
     // emit event to tell the Parent component that the user clicked on Calculate button
